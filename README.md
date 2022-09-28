@@ -12,4 +12,5 @@ Installeer pygame met pip:
 pip install -r requirements.txt
 ```
 
-# Installeren van de gam
+# Installeren van de game
+run 
