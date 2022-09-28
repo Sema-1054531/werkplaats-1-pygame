@@ -22,12 +22,12 @@ font2 = pygame.font.SysFont("arialblack", 20)
 TEXT_COL = (255, 255, 255)
 
 #load button images
-start_img = pygame.image.load("Play.png").convert_alpha()
-quit_img = pygame.image.load("Quit.png").convert_alpha()
+start_img = pygame.image.load("images/Play.png").convert_alpha()
+quit_img = pygame.image.load("images/Quit.png").convert_alpha()
 
 #Create button instances
-start_button = button.Button(50, 125, start_img, 0.3)
-quit_button = button.Button(450, 125, quit_img, 0.3)
+start_button = button.Button(125, 125, start_img, 1)
+quit_button = button.Button(475, 125, quit_img, 1)
 
 def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
@@ -37,7 +37,7 @@ def draw_text(text, font, text_col, x, y):
 run = True
 while run:
 
-    screen.fill((52, 78, 91))
+    screen.fill((0, 0, 0))
 
     #check if game is in the menu
     if game_menu == True:
