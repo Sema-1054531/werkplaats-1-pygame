@@ -13,4 +13,4 @@ pip install -r requirements.txt
 ```
 
 # Installeren van de game
-#nadir
+
