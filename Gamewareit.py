@@ -1,7 +1,7 @@
 import random
-
 import pygame
 
+pygame.soundmixer(44100, 32, 16, 8)
 pygame.init()
 
 # create screen
@@ -13,7 +13,6 @@ background = pygame.image.load('background.png')
 pygame.display.set_caption("Space Ware IT")
 icon = pygame.image.load('ufo.png')
 pygame.display.set_icon(icon)
-
 
 #Player
 playerImg = pygame.image.load('newship.png')
@@ -35,6 +34,7 @@ bulletY = 480
 bulletX_change = 0
 bulletY_change = 10
 bullet_state = "ready"
+bullet = []
 
 
 def player(x,y):
