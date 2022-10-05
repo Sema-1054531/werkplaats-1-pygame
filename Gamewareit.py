@@ -15,11 +15,11 @@ icon = pygame.image.load('ufo.png')
 pygame.display.set_icon(icon)
 
 #Player
-playerImg = pygame.image.load('space.png')
-playerX = 370
-playerY = 480
+playerImg = pygame.image.load('newship.png')
+playerX = 70
+playerY = 300
 playerX_change = 0
-
+playerY_change = 0
 #Enemy
 enemyImg = pygame.image.load('rock.png')
 enemyX = random.randint(0,800)
@@ -44,9 +44,7 @@ def enemy(x,y):
     screen.blit(enemyImg, (x, y))
 
 def fire_bullet(x,y):
-    global bullet_state
-    bullet_state = "fire"
-    screen.blit(bulletImg, (x + 16, y + 10))
+    screen.blit(bulletImg,(x + 16, y + 10))
 
 #Game loop
 running = True
@@ -57,7 +55,7 @@ while running:
     # Background Image
     screen.blit (background,(0,0))
     playerX -= 0
-    print(playerX)
+    playerY -= 0
     for event in  pygame.event.get() :
         if event.type == pygame.QUIT:
             running = False
@@ -68,18 +66,30 @@ while running:
             playerX_change = -5
         if event.key == pygame.K_RIGHT:
             playerX_change = 5
+        if event.key == pygame.K_DOWN:
+                playerY_change = 5
+        if event.key == pygame.K_UP:
+                playerY_change = -5
+
         if event.key == pygame.K_SPACE:
+            print("bullshit")
             bulletX = playerX
-            fire_bullet(playerX, bulletY)
+            fire_bullet(bulletX, bulletY)
+            while bullet_state == "ready":
+                bullet_state == "fire"
 
     if event.type == pygame.KEYUP:
         if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
             playerX_change = 0
-
+        if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
+            playerY_change = 0
 
     # 5 = 5 + -0.1 - 5 = 5 - 0.1
 
     playerX += playerX_change
+    playerY += playerY_change
+    bulletX += bulletX_change
+
     player(playerX, playerY)
     enemy(enemyX, enemyY)
     pygame.display.update()
@@ -89,6 +99,10 @@ while running:
         playerX = 0
     elif playerX >= 736:
         playerX = 736
+    if playerY <= 0:
+        playerY = 0
+    elif playerY >= 550:
+        playerY = 550
 #movement bounce enemy
     enemyX += enemyX_change
     if enemyX <= 0:
@@ -101,7 +115,7 @@ while running:
     #bullet movement
     if bullet_state == "fire":
         fire_bullet(playerX,bulletY)
-        bulletY -= bulletY_change
+        bulletX += bulletX_change
 
 
 
