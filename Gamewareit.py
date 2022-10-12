@@ -66,7 +66,7 @@ def enemy(x,y):
     screen.blit(enemyImg, (x, y))
 
 def fire_bullet(x,y):
-    screen.blit(bulletImg,(x,y))
+    screen.blit(bulletImg,(x + 60 ,y + 15))
 
 
 
@@ -138,7 +138,7 @@ while running:
     #bullet movement
     if bullet_state == "fire":
         fire_bullet(bulletX, bulletY)
-    pygame.display.update()
+
 
 # checking for boundaries
     if playerX <= 0:
