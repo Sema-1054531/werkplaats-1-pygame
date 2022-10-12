@@ -4,9 +4,9 @@ from pygame.locals import*
 pygame.init()
 
 #Creating a window
-width = 1000
+width = 800
 height = 600
-window = pygame.display.set_mode((1000, 600))
+window = pygame.display.set_mode((800, 600))
 
 #Background image
 bg_img = pygame.image.load('images/planet.jpg')
