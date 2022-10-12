@@ -1,7 +1,5 @@
 import random
 import pygame
-
-pygame.soundmixer(44100, 32, 16, 8)
 pygame.init()
 
 # create screen
@@ -118,5 +116,7 @@ while running:
         bulletX += bulletX_change
 
 
+    pygame.display.update()
 
+pygame.quit()
 
