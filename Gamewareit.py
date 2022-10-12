@@ -56,8 +56,8 @@ bullet = []
 
 #score
 score = 0
-highscore_file = open('highscore.dat', "r")
-highscore_int = int(highscore_file.read())
+# highscore_file = open('highscore.dat', "r")
+# highscore_int = int(highscore_file.read())
 
 def player(x,y):
     screen.blit(playerImg, (x, y))
@@ -75,8 +75,8 @@ def show_text(msg, x, y, color, size):
 
 #Game loop
 
-highscore_file
-highscore_int
+# highscore_file
+# highscore_int
 
 running = True
 while running:
@@ -157,20 +157,20 @@ while running:
     show_text(f"SCORE: {score}", 10, 10, white, 35)
 
 # draw high score
-    if score < highscore_int:
-            hi_score_message = show_text("HI-SCORE: {0}".format(highscore_int), font, 50, black, 30)
-    else:
-            highscore_file = open('highscore.dat', "w")
-            highscore_file.write(str(score))
-            highscore_file.close()
-            highscore_file = open('highscore.dat', "r")
-            highscore_int = int(highscore_file.read())
-            highscore_file.close()
-            hi_score_message = show_text("HI-SCORE: {0}".format(highscore_int), font, 50, yellow, 30)
+    # if score < highscore_int:
+    #         hi_score_message = show_text("HI-SCORE: {0}".format(highscore_int), font, 50, black, 30)
+    # else:
+    #         highscore_file = open('highscore.dat', "w")
+    #         highscore_file.write(str(score))
+    #         highscore_file.close()
+    #         highscore_file = open('highscore.dat', "r")
+    #         highscore_int = int(highscore_file.read())
+    #         highscore_file.close()
+    #         hi_score_message = show_text("HI-SCORE: {0}".format(highscore_int), font, 50, yellow, 30)
 
-    hi_score_message_rect = hi_score_message.get_rect()
+    # hi_score_message_rect = hi_score_message.get_rect()
 
-    screen.blit(hi_score_message, (800-hi_score_message_rect[2]-10, 10))
+    # screen.blit(hi_score_message, (800-hi_score_message_rect[2]-10, 10))
 
     pygame.display.update()
 
