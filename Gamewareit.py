@@ -1,11 +1,13 @@
 import random
 import pygame
-
-pygame.soundmixer(44100, 32, 16, 8)
+from pygame.locals import *
 pygame.init()
 
 # create screen
 screen = pygame.display.set_mode((800, 600))
+
+
+
 
 # Background
 background = pygame.image.load('background.png')
@@ -13,6 +15,7 @@ background = pygame.image.load('background.png')
 pygame.display.set_caption("Space Ware IT")
 icon = pygame.image.load('ufo.png')
 pygame.display.set_icon(icon)
+
 
 #Player
 playerImg = pygame.image.load('newship.png')
