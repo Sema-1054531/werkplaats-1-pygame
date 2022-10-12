@@ -1,7 +1,6 @@
 #score
 score = 0
 
-
 def show_text(msg, x, y, color, size):
     font = pygame.font.Font("8-bit-madness.ttf", size)
     text = font.render(msg, True, color)
