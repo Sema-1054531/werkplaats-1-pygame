@@ -52,7 +52,7 @@ bulletY = playerY
 bulletX_change = 3
 bulletY_change = 10
 bullet_state = "ready"
-bullet = []
+
 
 #score
 score = 0
@@ -161,6 +161,9 @@ while running:
 
 
 #bullet movement
+    if bulletY <= 0:
+        bulletY = 480
+        bullet_state = "ready"
     if bullet_state == "fire":
         fire_bullet(playerX,bulletY)
         bulletX += bulletX_change
