@@ -13,7 +13,6 @@ screen = pygame.display.set_mode((width, height))
 
 # Background
 background = pygame.image.load('background.png')
-
 # Title and Icon
 pygame.display.set_caption("Space Ware IT")
 icon = pygame.image.load('ufo.png')
@@ -39,7 +38,7 @@ playerY = 300
 playerX_change = 0
 playerY_change = 0
 #Enemy
-enemyImg = pygame.image.load('meteor.png')
+enemyImg = pygame.image.load('rock.png')
 enemyX = random.randint(0,800)
 enemyY = random.randint(50,150)
 enemyX_change = 4
@@ -56,8 +55,6 @@ bullet = []
 
 #score
 score = 0
-highscore_file = open('highscore.dat', "r")
-highscore_int = int(highscore_file.read())
 
 def player(x,y):
     screen.blit(playerImg, (x, y))
@@ -69,30 +66,22 @@ def fire_bullet(x,y):
     screen.blit(bulletImg,(x + 16, y + 10))
 
 def show_text(msg, x, y, color, size):
-    font = pygame.font.Font("8-bit-madness.ttf", size)
-    text = font.render(msg, True, color)
-    screen.blit(text, (x, y))
+        font = pygame.font.Font("8-bit-madness.ttf", size)
+        text = font.render(msg, True, color)
+        screen.blit(text, (x, y))
 
 #Game loop
-
-highscore_file
-highscore_int
-
 running = True
 while running:
 
     #RGB RED,GREEN,BLEU (kleur)
     screen.fill((0, 0, 0))
-    #Background Image
+    # Background Image
     screen.blit (background,(0,0))
     playerX -= 0
     playerY -= 0
     for event in  pygame.event.get() :
         if event.type == pygame.QUIT:
-            if score > highscore_int:
-                highscore_file = open('highscore.dat', "w")
-                highscore_file.write(str(score))
-                highscore_file.close()
             running = False
     # show_text(f"SCORED: {score}", width * 1 / 3, height * 4 / 5, white, 40)
     # keystroke checking left or right.
@@ -138,7 +127,6 @@ while running:
         playerY = 0
     elif playerY >= 550:
         playerY = 550
-
 #movement bounce enemy
     enemyX += enemyX_change
     if enemyX <= 0:
@@ -148,33 +136,15 @@ while running:
         enemyX_change = -4
         enemyY += enemyY_change
 
-#bullet movement
+    #bullet movement
     if bullet_state == "fire":
         fire_bullet(playerX,bulletY)
         bulletX += bulletX_change
 
-# draw score
     show_text(f"SCORE: {score}", 10, 10, white, 35)
-
-# draw high score
-    if score < highscore_int:
-            hi_score_message = show_text("HI-SCORE: {0}".format(highscore_int), font, 50, black, 30)
-    else:
-            highscore_file = open('highscore.dat', "w")
-            highscore_file.write(str(score))
-            highscore_file.close()
-            highscore_file = open('highscore.dat', "r")
-            highscore_int = int(highscore_file.read())
-            highscore_file.close()
-            hi_score_message = show_text("HI-SCORE: {0}".format(highscore_int), font, 50, yellow, 30)
-
-    hi_score_message_rect = hi_score_message.get_rect()
-
-    screen.blit(hi_score_message, (800-hi_score_message_rect[2]-10, 10))
-
     pygame.display.update()
 
 pygame.quit()
-
 quit()
+
 
