@@ -25,14 +25,13 @@ while running:
     if (i==-width):
         window.blit(bg_img,(width+i,0))
         i=0
-    i -= 0.5
+    i -= 0.4
     for event in pygame.event.get():
         if event.type == QUIT:
             running = False
 
     pygame.display.update()
 pygame.quit()
-
 
 
 
