@@ -13,6 +13,7 @@ screen = pygame.display.set_mode((width, height))
 
 # Background
 background = pygame.image.load('background.png')
+
 # Title and Icon
 pygame.display.set_caption("Space Ware IT")
 icon = pygame.image.load('ufo.png')
@@ -146,5 +147,4 @@ while running:
 
 pygame.quit()
 quit()
-
 
