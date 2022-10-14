@@ -53,7 +53,7 @@ bulletY = playerY
 bulletX_change = 3
 bulletY_change = 10
 bullet_state = "ready"
-bullet = []
+
 
 #score
 score = 0
@@ -67,7 +67,7 @@ def enemy(x,y):
     screen.blit(enemyImg, (x, y))
 
 def fire_bullet(x,y):
-    screen.blit(bulletImg,(x,y))
+    screen.blit(bulletImg,(x + 60 ,y + 15))
 
 def isCollision(enemyX, enemyY, bulletX, bulletY):
     distance = math.sqrt((math.pow(enemyX - bulletX, 2)) + (math.pow(enemyY - bulletY, 2)))
@@ -145,6 +145,7 @@ while running:
     if bullet_state == "fire":
         fire_bullet(bulletX, bulletY)
 
+
 # checking for boundaries
     if playerX <= 0:
         playerX = 0
@@ -166,6 +167,9 @@ while running:
 
 
 #bullet movement
+    if bulletY <= 0:
+        bulletY = 480
+        bullet_state = "ready"
     if bullet_state == "fire":
         fire_bullet(playerX,bulletY)
         bulletX += bulletX_change
