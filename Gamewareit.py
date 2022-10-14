@@ -1,4 +1,5 @@
 import random
+import math
 import pygame
 
 
@@ -39,7 +40,7 @@ playerY = 300
 playerX_change = 0
 playerY_change = 0
 #Enemy
-enemyImg = pygame.image.load('meteor.png')
+enemyImg = pygame.image.load('images/meteor.png')
 enemyX = random.randint(0,800)
 enemyY = random.randint(50,150)
 enemyX_change = 4
@@ -68,7 +69,12 @@ def enemy(x,y):
 def fire_bullet(x,y):
     screen.blit(bulletImg,(x + 60 ,y + 15))
 
-
+def isCollision(enemyX, enemyY, bulletX, bulletY):
+    distance = math.sqrt((math.pow(enemyX - bulletX, 2)) + (math.pow(enemyY - bulletY, 2)))
+    if distance < 27:
+        return True
+    else:
+        return False
 
 def show_text(msg, x, y, color, size):
     font = pygame.font.Font("8-bit-madness.ttf", size)
@@ -167,6 +173,16 @@ while running:
     if bullet_state == "fire":
         fire_bullet(playerX,bulletY)
         bulletX += bulletX_change
+
+# Collision
+    collision = isCollision(enemyX, enemyY, bulletX, bulletY)
+    if collision:
+        bulletY = 480
+        bullet_state = 'ready'
+        score += 10
+        print(score)
+        enemyX = random.randint(0, 800)
+        enemyY = random.randint(50, 150)
 
 
 # draw score
