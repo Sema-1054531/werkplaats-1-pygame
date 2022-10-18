@@ -26,21 +26,21 @@ def add_enemy_at_location(x, y):
 running = True
 
 while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
 
-    enemy_x_pos += enemy_speed
-    if enemy_speed >0:
-        if enemy_x_pos >= screen_width:
-            enemy_x_pos = 0
-            enemy_y_pos = randrange(screen_height)
+        enemy_x_pos += enemy_speed
+        if enemy_speed >0:
+            if enemy_x_pos >= screen_width:
+                enemy_x_pos = 0
+                enemy_y_pos = randrange(screen_height)
 
-    if enemy_speed <0:
-        if enemy_x_pos <= 0:
-            enemy_x_pos = 800
-            enemy_y_pos = randrange(screen_height)
+        if enemy_speed <0:
+            if enemy_x_pos <= 0:
+                enemy_x_pos = 800
+                enemy_y_pos = randrange(screen_height)
 
-    screen.blit(background, (0, 0))
-    add_enemy_at_location(enemy_x_pos, enemy_y_pos)
-    pygame.display.update()
+        screen.blit(background, (0, 0))
+        add_enemy_at_location(enemy_x_pos, enemy_y_pos)
+        pygame.display.update()
