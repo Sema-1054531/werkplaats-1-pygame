@@ -1,6 +1,7 @@
 import pygame
 import random
 import math
+from pygame import mixer
 from random import randrange
 
 pygame.init()
@@ -14,6 +15,8 @@ screen = pygame.display.set_mode((width, height))
 
 # Background
 background = pygame.image.load('background.png')
+mixer.music.load('background.wav')
+mixer.music.play(-1)
 
 # Title and Icon
 pygame.display.set_caption("Space Ware IT")
@@ -135,6 +138,8 @@ while running:
             bulletY = playerY
             fire_bullet(bulletX, bulletY)
             if bullet_state == "ready":
+                bulletSound = mixer.Sound("bulletsound.wav")
+                bulletSound.play()
                 bullet_state = "fire"
 
 
@@ -172,6 +177,8 @@ while running:
         # inside 'for' loops, so it will count ALL enemies collision
         collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision:
+            explosionSound = mixer.Sound("explosion.wav")
+            explosionSound.play()
             bulletY = 480
             bullet_state = "ready"
             score += 10
