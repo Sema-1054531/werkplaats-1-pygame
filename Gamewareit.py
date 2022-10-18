@@ -1,7 +1,7 @@
+import pygame
 import random
 import math
-import pygame
-
+from random import randrange
 
 pygame.init()
 
@@ -39,40 +39,52 @@ playerX = 70
 playerY = 300
 playerX_change = 0
 playerY_change = 0
-#Enemy
-enemyImg = pygame.image.load('images/meteor.png')
-enemyX = random.randint(0,800)
-enemyY = random.randint(50,150)
-enemyX_change = 4
-enemyY_change = 40
+
+# enemy
+enemyImg = []
+enemyX = []
+enemyY = []
+enemyX_change = []
+enemyY_change = []
+num_of_enemies = 6
 
 #Bullet
 bulletImg = pygame.image.load('bully.png')
 bulletX = playerX
 bulletY = playerY
-bulletX_change = 3
+bulletX_change = 6
 bulletY_change = 10
 bullet_state = "ready"
 
 
 #score
 score = 0
+
+# multiple enemies
+for i in range(num_of_enemies):
+    enemyImg.append(pygame.image.load('meteor.png'))
+    enemyX.append(736)
+    enemyY.append(random.randrange(height))
+    enemyX_change.append(-3)
+    enemyY_change.append(-3)
+
 # highscore_file = open('highscore.dat', "r")
 # highscore_int = int(highscore_file.read())
 
 def player(x,y):
     screen.blit(playerImg, (x, y))
 
-def enemy(x,y):
-    screen.blit(enemyImg, (x, y))
+def add_enemy_at_location(x, y, i):
+    screen.blit(enemyImg[i], (x, y))
 
 def fire_bullet(x,y):
     screen.blit(bulletImg,(x + 60 ,y + 15))
 
 def isCollision(enemyX, enemyY, bulletX, bulletY):
-    distance = math.sqrt((math.pow(enemyX - bulletX, 2)) + (math.pow(enemyY - bulletY, 2)))
+    # Formula of collision distance between 2 points and midpoint
+    distance = math.sqrt(math.pow(enemyX-bulletX,2)+math.pow(enemyY-bulletY,2))
     if distance < 27:
-        return True
+        return True # Collision had occur
     else:
         return False
 
@@ -102,6 +114,7 @@ while running:
                 highscore_file.write(str(score))
                 highscore_file.close()
             running = False
+
     # show_text(f"SCORED: {score}", width * 1 / 3, height * 4 / 5, white, 40)
     # keystroke checking left or right.
     if event.type == pygame.KEYDOWN:
@@ -139,12 +152,42 @@ while running:
 
 
     player(playerX, playerY)
-    enemy(enemyX, enemyY)
+    add_enemy_at_location(enemyX[i], enemyY[i], i)
+
+    #movement eneymy
+    for i in range(num_of_enemies):
+
+        enemyX[i] += enemyX_change[i]
+        if enemyX_change[i] > 0:
+            if enemyX[i] >= width:
+                enemyX[i] = 0
+                enemyY[i] = randrange(height)
+
+        if enemyY_change[i] < 0:
+            if enemyX[i] <= 0:
+                enemyX[i] = 800
+                enemyY[i] = randrange(height)
+
+        # Bullet and Enemy Collision
+        # inside 'for' loops, so it will count ALL enemies collision
+        collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
+        if collision:
+            bulletY = 480
+            bullet_state = "ready"
+            score += 10
+            # enemy will respawn at random location
+            enemyX[i] = random.randint(0, 736)
+            enemyY[i] = random.randint(50, 150)
+
+        add_enemy_at_location(enemyX[i], enemyY[i], i)
 
     #bullet movement
     if bullet_state == "fire":
         fire_bullet(bulletX, bulletY)
-
+    # reset the bullet when it reachs the top of the screen, so the space ship can shoot multiple times
+    if bulletY <= 0:
+        bulletY = 480
+        bullet_state = "ready"
 
 # checking for boundaries
     if playerX <= 0:
@@ -156,33 +199,6 @@ while running:
     elif playerY >= 550:
         playerY = 550
 
-#movement bounce enemy
-    enemyX += enemyX_change
-    if enemyX <= 0:
-        enemyX_change = 4
-        enemyY += enemyY_change
-    elif enemyX >= 736:
-        enemyX_change = -4
-        enemyY += enemyY_change
-
-
-#bullet movement
-    if bulletY <= 0:
-        bulletY = 480
-        bullet_state = "ready"
-    if bullet_state == "fire":
-        fire_bullet(playerX,bulletY)
-        bulletX += bulletX_change
-
-# Collision
-    collision = isCollision(enemyX, enemyY, bulletX, bulletY)
-    if collision:
-        bulletY = 480
-        bullet_state = 'ready'
-        score += 10
-        print(score)
-        enemyX = random.randint(0, 800)
-        enemyY = random.randint(50, 150)
 
 
 # draw score
