@@ -94,7 +94,7 @@ while running:
             if score > highscore_int:
                 highscore_file = open('highscore.dat', "w")
                 highscore_file.write(str(score))
-                highscore_file.close()
+                highscore_file.close() status
             running = False
     # show_text(f"SCORED: {score}", width * 1 / 3, height * 4 / 5, white, 40)
     # keystroke checking left or right.
