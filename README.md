@@ -14,3 +14,17 @@ pip install -r requirements.txt
 
 # Installeren van de game
 
+
+Wat doet het project
+
+
+
+Waarom is dit project bruikbaar
+
+
+
+Hoe kan je het gebruiken
+
+
+
+Wie onderhoudt en draagt bij aan het project
