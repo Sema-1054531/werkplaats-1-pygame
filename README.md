@@ -18,10 +18,7 @@ Onze doel van dit project was het maken van een spaceshooter game
 
 Wij hebben gebruik gemaakt van de volgende tools
 
-PyGame
-Github
-VsCode
-PyCharm
+PyGame, Github, VsCode, PyCharm,
 
 De uitdaging was zeker de collision detectie van zowel de speler als object.
 
