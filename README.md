@@ -14,13 +14,7 @@ pip install -r requirements.txt
 
 # Project beschrijving
 
-Wat doet onze project
-
-Onze doel van dit project was het maken van een game  
-
-Welke technologieen heb je toegepast
-
-Als technologie hebben we de pygame module gebruikt
+Onze doel van dit project was het maken van een spaceshooter game
 
 Wij hebben gebruik gemaakt van de volgende tools
 
@@ -29,9 +23,7 @@ Github
 VsCode
 PyCharm
 
-Wat was een uitdaging. kenmerken, uitvoeren.
-
-De uitdaging was zeker de colission detectie van zowel de speler als object.
+De uitdaging was zeker de collision detectie van zowel de speler als object.
 
 # Installeren van de game
 
@@ -39,7 +31,6 @@ Om de game installeren ga je naar github.com/ code->download zip->IDE omgeving->
 
 We hebben geen exeutable dit kan e.v.t nog later worden toegevoegd.
 
-
 # Credits
 
-Nadir, Martijn, Romius, Thijs, Senma
+Nadir, Martijn, Romius, Thijs, Sema
