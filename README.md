@@ -22,6 +22,8 @@ PyGame, Github, VsCode, PyCharm,
 
 De uitdaging was zeker de collision detectie van zowel de speler als object.
 
+Maar ook een leermoment is dat je vooruit moet plannen en niet op het laatste moment nog wat aanpassingen maakt.
+
 # Installeren van de game
 
 Om de game installeren ga je naar github.com/ code->download zip->IDE omgeving->terminal run gamewareit.py
