@@ -86,7 +86,7 @@ def fire_bullet(x,y):
 def isCollision(enemyX, enemyY, bulletX, bulletY):
     # Formula of collision distance between 2 points and midpoint
     distance = math.sqrt(math.pow(enemyX-bulletX,2)+math.pow(enemyY-bulletY,2))
-    if distance < 27:
+    if distance < 27: #distance between left of the screen and airplane
         return True # Collision had occur
     else:
         return False
@@ -123,16 +123,16 @@ while running:
     if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_LEFT:
             playerX_change = -5
-            print("links")
+
         if event.key == pygame.K_RIGHT:
             playerX_change = 5
-            print("rechts")
+
         if event.key == pygame.K_DOWN:
             playerY_change = 5
-            print("omlaag")
+
         if event.key == pygame.K_UP:
             playerY_change = -5
-            print("omhoog")
+
         if event.key == pygame.K_LSHIFT:
             bulletX = playerX
             bulletY = playerY
@@ -183,8 +183,9 @@ while running:
             bullet_state = "ready"
             score += 10
             # enemy will respawn at random location
-            enemyX[i] = random.randint(0, 736)
+            enemyX[i] = random.randint(750, 800)
             enemyY[i] = random.randint(50, 150)
+
 
         add_enemy_at_location(enemyX[i], enemyY[i], i)
 
