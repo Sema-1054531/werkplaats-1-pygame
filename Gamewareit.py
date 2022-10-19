@@ -24,7 +24,7 @@ icon = pygame.image.load('ufo.png')
 pygame.display.set_icon(icon)
 
 #font
-font = pygame.font.Font('8-bit-madness.ttf', 100)
+font = "8-Bit-Madness.ttf"
 
 # colors
 cyan = (0,255,255)
@@ -59,9 +59,42 @@ bulletX_change = 6
 bulletY_change = 10
 bullet_state = "ready"
 
+# framerate
+clock = pygame.time.Clock()
+FPS = 30
 
 #score
 score = 0
+highscore_file = open('highscore.dat', "r")
+highscore_int = int(highscore_file.read())
+
+# text rendering function
+def show_text(message, textfont, size, color):
+    my_font = pygame.font.Font(textfont, size)
+    my_message = my_font.render(message, 0, color)
+
+    return my_message
+
+movement_speed = 3
+
+#star class
+class Stars:   
+    def __init__(self, xcor, ycor, xchange, width):
+        self.xcor = xcor
+        self.ycor = ycor
+        self.xchange = xchange
+        self.width = width
+
+    def draw_stars(self):
+        pygame.draw.rect(
+            screen, white, (self.xcor, self.ycor, self.width, self.width))
+        
+num_of_star = 75
+star = []
+for i in range(num_of_star):
+    star.append(Stars(random.randint(2, width), random.randint(2, height), random.randint(2, movement_speed + 4) * -1,
+                        random.randint(1, 3)))
+
 
 # multiple enemies
 for i in range(num_of_enemies):
@@ -70,9 +103,6 @@ for i in range(num_of_enemies):
     enemyY.append(random.randrange(height))
     enemyX_change.append(-3)
     enemyY_change.append(-3)
-
-# highscore_file = open('highscore.dat', "r")
-# highscore_int = int(highscore_file.read())
 
 def player(x,y):
     screen.blit(playerImg, (x, y))
@@ -86,39 +116,48 @@ def fire_bullet(x,y):
 def isCollision(enemyX, enemyY, bulletX, bulletY):
     # Formula of collision distance between 2 points and midpoint
     distance = math.sqrt(math.pow(enemyX-bulletX,2)+math.pow(enemyY-bulletY,2))
-    if distance < 27:
+    if distance < 27: #distance between left of the screen and airplane
         return True # Collision had occur
     else:
         return False
 
-def show_text(msg, x, y, color, size):
-    font = pygame.font.Font("8-bit-madness.ttf", size)
-    text = font.render(msg, True, color)
-    screen.blit(text, (x, y))
+# def show_text(msg, x, y, color, size):
+#     font = pygame.font.Font("8-bit-madness.ttf", size)
+#     text = font.render(msg, True, color)
+#     screen.blit(text, (x, y))
 
 #Game loop
 
-# highscore_file
-# highscore_int
+highscore_file
+highscore_int
 
 running = True
 while running:
 
     #RGB RED,GREEN,BLEU (kleur)
-    screen.fill((0, 0, 0))
-    #Background Image
-    screen.blit (background,(0,0))
+    screen.fill(black)
+
+    for i in range(num_of_star):
+        star[i].draw_stars()
+        star[i].xcor += star[i].xchange
+        if star[i].xcor <= 0:
+            star[i].xcor = width
+            star[i].ycor = random.randint(2, height)
+
     playerX -= 0
     playerY -= 0
     for event in  pygame.event.get() :
         if event.type == pygame.QUIT:
-            #if score > highscore_int:
-                #highscore_file = open('highscore.dat', "w")
-               # highscore_file.write(str(score))
-               # highscore_file.close() status
+            if score > highscore_int:
+                highscore_file = open('highscore.dat', "w")
+                highscore_file.write(str(score))
+                highscore_file.close()
             running = False
 
-        # show_text(f"SCORED: {score}", width * 1 / 3, height * 4 / 5, white, 40)
+
+    # show_text(f"SCORED: {score}", width * 1 / 3, height * 4 / 5, white, 40)
+    # keystroke checking left or right.
+
         # keystroke checking left or right.
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
@@ -141,6 +180,7 @@ while running:
                     bulletSound = mixer.Sound("bulletsound.wav")
                     bulletSound.play()
                     bullet_state = "fire"
+ 
 
 
     if event.type == pygame.KEYUP:
@@ -157,7 +197,7 @@ while running:
 
 
     player(playerX, playerY)
-    add_enemy_at_location(enemyX[i], enemyY[i], i)
+    # add_enemy_at_location(enemyX[i], enemyY[i], i)
 
     #movement eneymy
     for i in range(num_of_enemies):
@@ -183,8 +223,9 @@ while running:
             bullet_state = "ready"
             score += 10
             # enemy will respawn at random location
-            enemyX[i] = random.randint(0, 736)
+            enemyX[i] = random.randint(750, 800)
             enemyY[i] = random.randint(50, 150)
+
 
         add_enemy_at_location(enemyX[i], enemyY[i], i)
 
@@ -208,26 +249,28 @@ while running:
 
 
 
-# draw score
-    show_text(f"SCORE: {score}", 10, 10, white, 35)
+     #draw score
+    screen.blit(show_text("SCORE: {0}".format(score), font, 35, white), (10, 10))
 
 # draw high score
-    # if score < highscore_int:
-    #         hi_score_message = show_text("HI-SCORE: {0}".format(highscore_int), font, 50, black, 30)
-    # else:
-    #         highscore_file = open('highscore.dat', "w")
-    #         highscore_file.write(str(score))
-    #         highscore_file.close()
-    #         highscore_file = open('highscore.dat', "r")
-    #         highscore_int = int(highscore_file.read())
-    #         highscore_file.close()
-    #         hi_score_message = show_text("HI-SCORE: {0}".format(highscore_int), font, 50, yellow, 30)
+    if score < highscore_int:
+        hi_score_message = show_text("HI-SCORE: {0}".format(highscore_int), font, 35, white)
+    else:
+        highscore_file = open('highscore.dat', "w")
+        highscore_file.write(str(score))
+        highscore_file.close()
+        highscore_file = open('highscore.dat', "r")
+        highscore_int = int(highscore_file.read())
+        highscore_file.close()
+        hi_score_message = show_text("HI-SCORE: {0}".format(highscore_int), font, 35, white)
 
-    # hi_score_message_rect = hi_score_message.get_rect()
+    hi_score_message_rect = hi_score_message.get_rect()
 
-    # screen.blit(hi_score_message, (800-hi_score_message_rect[2]-10, 10))
+    screen.blit(hi_score_message, (800-hi_score_message_rect[2]-10, 10))
 
     pygame.display.update()
+
+    clock.tick(60)
 
 pygame.quit()
 
