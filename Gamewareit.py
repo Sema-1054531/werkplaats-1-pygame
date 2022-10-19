@@ -157,27 +157,6 @@ while running:
 
     # show_text(f"SCORED: {score}", width * 1 / 3, height * 4 / 5, white, 40)
     # keystroke checking left or right.
-    if event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_LEFT:
-            playerX_change = -5
-
-        if event.key == pygame.K_RIGHT:
-            playerX_change = 5
-
-        if event.key == pygame.K_DOWN:
-            playerY_change = 5
-
-        if event.key == pygame.K_UP:
-            playerY_change = -5
-
-        if event.key == pygame.K_LSHIFT:
-            bulletX = playerX
-            bulletY = playerY
-            fire_bullet(bulletX, bulletY)
-            if bullet_state == "ready":
-                bulletSound = mixer.Sound("bulletsound.wav")
-                bulletSound.play()
-                bullet_state = "fire"
 
         # keystroke checking left or right.
         if event.type == pygame.KEYDOWN:
