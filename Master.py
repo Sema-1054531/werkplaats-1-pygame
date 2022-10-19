@@ -1,4 +1,3 @@
-# Master to combine files
 import pygame
 import button
 
