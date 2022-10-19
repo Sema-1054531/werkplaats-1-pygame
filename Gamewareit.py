@@ -112,11 +112,12 @@ while running:
     playerY -= 0
     for event in  pygame.event.get() :
         if event.type == pygame.QUIT:
-            if score > highscore_int:
-                highscore_file = open('highscore.dat', "w")
-                highscore_file.write(str(score))
-                highscore_file.close()
+            #if score > highscore_int:
+                #highscore_file = open('highscore.dat', "w")
+               # highscore_file.write(str(score))
+               # highscore_file.close() status
             running = False
+
 
     # show_text(f"SCORED: {score}", width * 1 / 3, height * 4 / 5, white, 40)
     # keystroke checking left or right.
@@ -141,6 +142,31 @@ while running:
                 bulletSound = mixer.Sound("bulletsound.wav")
                 bulletSound.play()
                 bullet_state = "fire"
+
+        # show_text(f"SCORED: {score}", width * 1 / 3, height * 4 / 5, white, 40)
+        # keystroke checking left or right.
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                playerX_change = -5
+                print("links")
+            if event.key == pygame.K_RIGHT:
+                playerX_change = 5
+                print("rechts")
+            if event.key == pygame.K_DOWN:
+                playerY_change = 5
+                print("omlaag")
+            if event.key == pygame.K_UP:
+                playerY_change = -5
+                print("omhoog")
+            if event.key == pygame.K_SPACE:
+                bulletX = playerX
+                bulletY = playerY
+                fire_bullet(bulletX, bulletY)
+                if bullet_state == "ready":
+                    bulletSound = mixer.Sound("bulletsound.wav")
+                    bulletSound.play()
+                    bullet_state = "fire"
+ 
 
 
     if event.type == pygame.KEYUP:
