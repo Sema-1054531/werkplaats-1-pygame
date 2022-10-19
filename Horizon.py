@@ -1,6 +1,6 @@
 import random
-
 import pygame
+
 
 pygame.init()
 
@@ -17,5 +17,15 @@ playerX = 70
 playerY = 300
 playerX_change = 0
 
+def player(x,y):
+    screen.blit(playerImg, (x, y))
 
 #Game loop
+running = True
+while running:
+    screen.fill((0, 0, 0))
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
