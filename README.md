@@ -12,19 +12,24 @@ Installeer pygame met pip:
 pip install -r requirements.txt
 ```
 
+# Project beschrijving
+
+
+Wat doet onze project
+
+
+Welke technologieen heb je toegepast
+
+
+Wat was een uitdaging. kenmerken, uitvoeren.
+
+
+
 # Installeren van de game
 
 
-Wat doet het project
 
 
 
-Waarom is dit project bruikbaar
+# Credits
 
-
-
-Hoe kan je het gebruiken
-
-
-
-Wie onderhoudt en draagt bij aan het project
