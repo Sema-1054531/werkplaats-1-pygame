@@ -26,10 +26,17 @@ pip install -r requirements.txt
 ```
 # Installeren van de game
 
-Om de game installeren ga je naar https://github.com/Rac-Software-Development/werkplaats-1-pygame-wareit code->download zip->IDE omgeving->terminal 
+1. clone de repo naar jou omgeving
 
 ```python
-<file_path/>run gamewareit.py
+git clone https://github.com/Rac-Software-Development/werkplaats-1-pygame-wareit
+```
+
+2. Installeer 
+Installeer pygame met pip:
+    
+```python
+pip install -r requirements.txt
 ```
 
 we hebben nog geen executable dit kan e.v.t nog later worden toegevoegd
