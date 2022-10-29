@@ -26,8 +26,7 @@ Maar ook is het belangrijk dat je vooruit moet plannen en niet op de laatste mom
 git clone https://github.com/Rac-Software-Development/werkplaats-1-pygame-wareit
 ```
 
-2. Installeer 
-Installeer pygame met pip:
+2. Installeer pygame met pip:
 
 ```python
 pip install -r requirements.txt
