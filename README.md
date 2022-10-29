@@ -2,11 +2,11 @@
 
 Een klassieke side scroll space shooter 2D game.
 
-De ruimteschip schiet op de meteorieten die de aarde binnen vallen maar wel goed richten omdat het maar een schot tegelijk is, en je krijgt punten als je ze hebt geraakt.
-
 # Project beschrijving
 
-Onze doel van dit project was het maken van een spaceshooter game 
+Onze doel van dit project was het maken van een spaceshooter game
+
+De ruimteschip schiet op de meteorieten die de aarde binnen vallen maar wel goed richten omdat het maar een schot tegelijk is en je krijgt punten als je ze hebt geraakt.
 
 De uitdaging was zeker de collision detectie van zowel de speler als object.
 
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 3. Run het bestand
 ```
-run gamewareit.py file
+run gamewareit.py 
 ```
 
 we hebben nog geen executable dit kan e.v.t nog later worden toegevoegd
