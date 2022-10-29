@@ -1,7 +1,8 @@
 # Space wareit
-Je vindt de presentatie met de opdrachtomschrijving op Teams in de "Bestanden" van Werkplaats 1. 
 
-Gebruik dit bestand om te omschrijven hoe jouw code gestart kan worden. Ga er in jouw instructie van uit dat de gebruiker de benodigde bibliotheken nog niet heeft geïnstalleerd.
+Een klassieke side scroll space shooter 2D game.
+
+
 
 # Gebruikte software
 
@@ -26,7 +27,7 @@ pip install -r requirements.txt
 ```
 # Installeren van de game
 
-1. clone de repo naar jou omgeving
+1. Clone de repo 
 
 ```python
 git clone https://github.com/Rac-Software-Development/werkplaats-1-pygame-wareit
@@ -39,12 +40,17 @@ Installeer pygame met pip:
 pip install -r requirements.txt
 ```
 
+```
+run gamewareit.py file
+```
+
 we hebben nog geen executable dit kan e.v.t nog later worden toegevoegd
 
 
 # Hoe speel je de game
 
-
+1. Gebruik WASD om te bewegen.
+2. Spatiebalk om een kogel af te vuren. 
 
 # Credits
 
