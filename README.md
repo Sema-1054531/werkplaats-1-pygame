@@ -3,6 +3,12 @@ Je vindt de presentatie met de opdrachtomschrijving op Teams in de "Bestanden" v
 
 Gebruik dit bestand om te omschrijven hoe jouw code gestart kan worden. Ga er in jouw instructie van uit dat de gebruiker de benodigde bibliotheken nog niet heeft geïnstalleerd.
 
+# Gebruikte software
+
+Python
+Framework - PyGame
+Andere modules sys,math,random
+
 # Project beschrijving
 
 Onze doel van dit project was het maken van een spaceshooter game 
@@ -10,7 +16,6 @@ Onze doel van dit project was het maken van een spaceshooter game
 De uitdaging was zeker de collision detectie van zowel de speler als object.
 
 Maar ook een leermoment is dat je vooruit moet plannen en niet op het laatste moment nog wat aanpassingen maakt.
-
 
 # Pygame installatie
 
