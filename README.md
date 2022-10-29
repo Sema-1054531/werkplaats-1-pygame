@@ -5,9 +5,9 @@ Gebruik dit bestand om te omschrijven hoe jouw code gestart kan worden. Ga er in
 
 # Gebruikte software
 
-Python
-Framework - PyGame
-Andere modules sys,math,random
+* Python
+* Framework - PyGame
+* Andere modules sys,mixer,math,random
 
 # Project beschrijving
 
