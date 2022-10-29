@@ -32,7 +32,7 @@ Om de game installeren ga je naar https://github.com/Rac-Software-Development/we
 <file_path/>run gamewareit.py
 ```
 
-we hebben nog geen executable dit kan e.v.t nog later worden aangepast
+we hebben nog geen executable dit kan e.v.t nog later worden toegevoegd
 
 
 # Hoe speel je de game
