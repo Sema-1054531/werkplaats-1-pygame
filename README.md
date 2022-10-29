@@ -18,13 +18,6 @@ Maar ook is het belangrijk dat je vooruit moet plannen en niet op de laatste mom
 * Framework - PyGame
 * Andere modules sys,mixer,math,random
 
-# Pygame installatie
-
-Installeer pygame met pip:
-    
-```python
-pip install -r requirements.txt
-```
 # Installeren van de game
 
 1. Clone de repo 
