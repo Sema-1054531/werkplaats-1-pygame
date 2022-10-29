@@ -35,11 +35,12 @@ git clone https://github.com/Rac-Software-Development/werkplaats-1-pygame-wareit
 
 2. Installeer 
 Installeer pygame met pip:
-    
+
 ```python
 pip install -r requirements.txt
 ```
 
+3. Run het bestand
 ```
 run gamewareit.py file
 ```
