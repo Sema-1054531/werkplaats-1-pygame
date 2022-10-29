@@ -16,7 +16,7 @@ De ruimteschip schiet op de meteorieten die de aarde binnen vallen maar wel goed
 
 # Installeren van de game
 
-1. Clone de repo 
+1. Clone de repo:
 
 ```python
 git clone https://github.com/Rac-Software-Development/werkplaats-1-pygame-wareit
@@ -28,12 +28,12 @@ git clone https://github.com/Rac-Software-Development/werkplaats-1-pygame-wareit
 pip install -r requirements.txt
 ```
 
-3. Run het bestand
+3. Run het bestand:
 ```
 run gamewareit.py 
 ```
 
-we hebben nog geen executable dit kan e.v.t nog later worden toegevoegd
+We hebben geen executable kunnen realiseren dit kan e.v.t nog later worden toegevoegd
 
 # Hoe te spelen
 
@@ -43,5 +43,3 @@ we hebben nog geen executable dit kan e.v.t nog later worden toegevoegd
 # Credits
 
 Nadir, Martijn, Romius, Thijs, Sema
-
-
