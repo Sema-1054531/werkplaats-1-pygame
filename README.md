@@ -10,7 +10,7 @@ Onze doel van dit project was het maken van een spaceshooter game
 
 De uitdaging was zeker de collision detectie van zowel de speler als object.
 
-Maar ook is het belangrijk dat je vooruit moet plannen en niet op de laatste moment nog aanpassingen gaat maken wat dit kan cruciaal aflopen.
+Maar ook is het belangrijk dat je vooruit moet plannen en niet op de laatste moment nog aanpassingen gaat maken want dit kan cruciaal aflopen.
 
 # Gebruikte software
 
