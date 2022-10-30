@@ -33,8 +33,6 @@ pip install -r requirements.txt
 run spacewareit.py 
 ```
 
-We hebben geen executable kunnen realiseren dit kan e.v.t nog later worden toegevoegd
-
 # Hoe te spelen
 
 1. Gebruik WASD om te bewegen.
