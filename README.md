@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 3. Run het bestand:
 ```
-run gamewareit.py 
+run spacewareit.py 
 ```
 
 We hebben geen executable kunnen realiseren dit kan e.v.t nog later worden toegevoegd
