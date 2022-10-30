@@ -20,7 +20,7 @@ pygame.display.set_caption("Space Shooter | Ware-IT" )
 #font
 font = "8-Bit-Madness.ttf"
 
-# text rendering function
+#text rendering function
 def message_to_screen(message, textfont, size, color):
     my_font = pygame.font.Font(textfont, size)
     my_message = my_font.render(message, 0, color)
@@ -50,7 +50,7 @@ for i in range(num_of_star):
     star.append(Stars(random.randint(2, width), random.randint(2, height), random.randint(2, movement_speed + 4) * -1,
                         random.randint(1, 3)))
 
-# colors
+#colors
 cyan = (0,255,255)
 white = (255, 255, 255)
 black = (0, 0, 0)
@@ -60,18 +60,18 @@ green = (0, 255, 0)
 blue = (0, 0, 255)
 yellow = (255, 255, 0)
 
-# framerate
+#framerate
 clock = pygame.time.Clock()
 FPS = 60
 
-# main menu
+#main menu
 def main_menu():
     menu = True
 
     selected = "play"
 
     while menu:
-    # controls
+    #controls
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -91,7 +91,7 @@ def main_menu():
                         pygame.quit()
                         quit()
 
-        # drawing background
+        #drawing background
         screen.fill(black)
 
         for i in range(num_of_star):
