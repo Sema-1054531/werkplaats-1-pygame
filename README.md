@@ -1,34 +1,44 @@
-# Werkplaats 1: PyGame
-Je vindt de presentatie met de opdrachtomschrijving op Teams in de "Bestanden" van Werkplaats 1. 
+# Space wareit
 
-Gebruik dit bestand om te omschrijven hoe jouw code gestart kan worden. Ga er in jouw instructie van uit dat de gebruiker de benodigde bibliotheken nog niet heeft geïnstalleerd.
-
-
-# Pygame installatie
-
-Installeer pygame met pip:
-    
-```python
-pip install -r requirements.txt
-```
+Een klassieke side scroll space shooter 2D game.
 
 # Project beschrijving
 
 Onze doel van dit project was het maken van een spaceshooter game
 
-Wij hebben gebruik gemaakt van de volgende tools
+De ruimteschip schiet op de meteorieten die de aarde binnen vallen maar wel goed richten omdat het maar een schot tegelijk is en je krijgt punten als je ze hebt geraakt.
 
-PyGame, Github, VsCode, PyCharm,
+# Gebruikte software
 
-De uitdaging was zeker de collision detectie van zowel de speler als object.
-
-Maar ook een leermoment is dat je vooruit moet plannen en niet op het laatste moment nog wat aanpassingen maakt.
+* Python
+* Framework - PyGame
+* Andere modules sys,mixer,math,random
 
 # Installeren van de game
 
-Om de game installeren ga je naar github.com/ code->download zip->IDE omgeving->terminal run gamewareit.py
+1. Clone de repo:
 
-We hebben geen exeutable dit kan e.v.t nog later worden toegevoegd.
+```python
+git clone https://github.com/Rac-Software-Development/werkplaats-1-pygame-wareit
+```
+
+2. Installeer pygame met pip:
+
+```python
+pip install -r requirements.txt
+```
+
+3. Run het bestand:
+```
+run gamewareit.py 
+```
+
+We hebben geen executable kunnen realiseren dit kan e.v.t nog later worden toegevoegd
+
+# Hoe te spelen
+
+1. Gebruik WASD om te bewegen.
+2. Spatiebalk om een kogel af te vuren. 
 
 # Credits
 
