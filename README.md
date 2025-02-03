@@ -1,43 +1,50 @@
-# Space wareit
+# 🚀 Space wareit
 
-Een klassieke side scroll space shooter 2D game.
+Een klassieke **2D side-scrolling space shooter game**.
 
-# Project beschrijving
+## 📜 Project beschrijving
 
-Onze doel van dit project was het maken van een spaceshooter game
+Ons doel met dit project was om een **spaceshooter-game** te maken.  
+Bestuur een ruimteschip en schiet meteorieten neer voordat ze de aarde bereiken!  
+Let op: je kunt maar **één schot tegelijk** afvuren, dus richt goed.
 
-De ruimteschip schiet op de meteorieten die de aarde binnen vallen maar wel goed richten omdat het maar een schot tegelijk is en je krijgt punten als je ze hebt geraakt.
+## 🛠️ Gebruikte technologieën
 
-# Gebruikte software
+- **Programmeertaal**: Python  
+- **Framework**: Pygame  
+- **Extra modules**: `sys`, `mixer`, `math`, `random` 
 
-* Python
-* Framework - PyGame
-* Andere modules sys,mixer,math,random
+## 📥 Installatie en opstarten
 
-# Installeren van de game
-
-1. Clone de repo:
-
-```python
-git clone https://github.com/Rac-Software-Development/werkplaats-1-pygame-wareit
+### 1️⃣ Clone de repository  
+Open een terminal en voer uit:
+```bash
+git clone https://github.com/Sema-1054531/werkplaats-1-pygame.git
+cd werkplaats-1-pygame
 ```
 
-2. Installeer pygame met pip:
-
-```python
-pip install -r requirements.txt
+### 2️⃣ Installeer Pygame
+Je hebt Python nodig om de game te spelen. Installeer Pygame met:
+```bash
+pip install pygame
 ```
 
-3. Run het bestand:
+### 3️⃣ Start de game
+Run de game met:
 ```
-run spacewareit.py 
+python spacewareit.py 
+```
+of, als `python` niet werkt:
+```
+python3 spacewareit.py 
 ```
 
-# Hoe te spelen
+## 🎮 Hoe te spelen  
 
-1. Gebruik WASD om te bewegen.
-2. Spatiebalk om een kogel af te vuren. 
+- **W, A, S, D** → Bewegen  
+- **Spatiebalk** → Schieten  
 
-# Credits
+## 👨‍💻 Credits  
 
-Nadir, Martijn, Romius, Thijs, Sema
+**Gemaakt door:**  
+*Sema, Nadir, Martijn, Romius, Thijs*  
